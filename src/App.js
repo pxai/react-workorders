@@ -1,29 +1,31 @@
 import React from 'react';
 
-var data = [{
-    "id" : "1",
-    "when": "2017-04-10",
-    "who": "2",
-    "description": "Installed React"
-    },
-    {
-        "id" : "2",
-        "when": "2017-04-11",
-        "who": "2",
-        "description": "Installed Everything required."
-    },
-    {
-        "id" : "2",
-        "when": "2017-04-12",
-        "who": "2",
-        "description": "Trying all elements"
-    }];
+
 
 var App = React.createClass({
   render: function () {
+
+      var rows = this.props.data.map(function(row){
+          return <tr>
+              <td>{row.id}</td>
+              <td>{row.who}</td>
+              <td>{row.when}</td>
+              <td>{row.description}</td>
+          </tr>;
+      });
+
+
+      var headers = this.props.headers.map(function(header) {
+          return <th>{header}</th>;
+      });
+
     return (
       <div>
-        Hello Workorders  React!
+          <h1>{this.props.title}</h1>
+          <table>
+              <thead>{headers}</thead>
+              {rows}
+          </table>
       </div>
     );
   }
