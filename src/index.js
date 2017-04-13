@@ -17,14 +17,15 @@ var data = [{
         "description": "Installed Everything required."
     },
     {
-        "id" : "2",
+        "id" : "3",
         "who": "2",
         "when": "2017-04-12",
         "description": "Trying all elements"
     }];
 
-var headersData = ['Id','Who','When','Description'];
+var headings = ['Id','Who','When','Description'];
+
 ReactDOM.render(
-    <App title={appTitle} headers={headersData} data={data} />,
+    <App title={appTitle} headings={headings} data={data} />,
     document.getElementById('root')
 );
