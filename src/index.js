@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+var author = 'Pello Altadill';
 var appTitle ='Workorder App';
 
 var data = [{
@@ -25,7 +26,7 @@ var data = [{
 
 var headings = ['Id','Who','When','Description'];
 // Propierties spread, ES6 feature.
-var properties = {title: appTitle, headings: headings , data: data };
+var properties = {title: appTitle, headings: headings , data: data, author: author };
 
 ReactDOM.render(
     <App

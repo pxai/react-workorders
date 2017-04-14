@@ -1,6 +1,7 @@
 import React from 'react';
 import Headings from './Headings';
 import Rows from './Rows';
+import Footer from './Footer';
 
 var App = React.createClass({
     render: function(){
@@ -12,6 +13,7 @@ var App = React.createClass({
                     <Headings headings={this.props.headings} />
                     <Rows data={this.props.data ? this.props.data : ''} />
                 </table>
+               <Footer author={this.props.author} />
             </div>
         );
     }
