@@ -24,8 +24,16 @@ var data = [{
     }];
 
 var headings = ['Id','Who','When','Description'];
+// Propierties spread, ES6 feature.
+var properties = {title: appTitle, headings: headings , data: data };
 
 ReactDOM.render(
-    <App title={appTitle} headings={headings} data={data} />,
+    <App
+        /*
+            This is
+            the main component
+        */
+        {...properties}
+         />,
     document.getElementById('root')
 );
