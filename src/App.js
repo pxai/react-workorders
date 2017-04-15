@@ -2,6 +2,7 @@ import React from 'react';
 import WorkorderTable from './WorkorderTable';
 import Headings from './Headings';
 import Rows from './Rows';
+import jQuery from '../public/js/jquery.min';
 
 
 var App = React.createClass({
@@ -27,20 +28,20 @@ var App = React.createClass({
                 return Error('Failed Validation, must be longer thant 2');
         }
     },
-    componentDidMount : function(){
+    componentDidMount: function (){
         jQuery.ajax({
             url: '/api/data.json',
             context: this,
             dataType: 'json',
             type: 'GET'
         }).done(function (data) {
-            this.setState({data: data});
+            return this.setState({data: data});
         });
     },
     render: function(){
 
         return(
-            <WorkorderTable title={this.props.title} author={this.props.author}>
+            <WorkorderTable title={this.props.title ? this.props.title : 'Super Orders App'} author={this.props.author} >
                     <Headings headings={this.props.headings} />
                     <Rows data={this.state.data ? this.state.data : this.props.data} />
             </WorkorderTable>

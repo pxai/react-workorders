@@ -7,9 +7,9 @@ var WorkorderTable = React.createClass({
             situation: 'Data ok'
         };
     },
-    updateSituation: function(data) {
+    updateSituation: function (situation) {
         console.log('Updated situation');
-        //this.setState({ situation: data });
+       // this.setState({ situation: situation });
     },
 
   render: function () {
