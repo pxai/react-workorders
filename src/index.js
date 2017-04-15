@@ -26,7 +26,8 @@ var data = [{
 
 var headings = ['Id','Who','When','Description'];
 // Propierties spread, ES6 feature.
-var properties = {title: appTitle, headings: headings , data: data, author: author };
+// Title is set by default props in App Component
+var properties = { headings: headings , data: data, author: author };
 
 ReactDOM.render(
     <App

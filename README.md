@@ -25,3 +25,21 @@ If you want it ready for prodction:
 ```
 npm run build
 ```
+
+# Versions
+Tagged versions of the project 
+## v1.0
+- Component, Rendering
+- Single component
+- Properties
+
+## v2.0
+- Multiple components
+- Applying styles
+
+## v3.0
+- Validation
+- this.props.children
+- LifeCycle
+- State and properties
+- Data from public API
