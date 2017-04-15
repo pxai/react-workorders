@@ -42,4 +42,9 @@ Tagged versions of the project
 - this.props.children
 - LifeCycle
 - State and properties
-- Data from public API
+- Data from public API - jQuery import
+
+## v4.0
+- Forms
+- Controlled components vs Uncontrolled
+- Passing calls from father to children
