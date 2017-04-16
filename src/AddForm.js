@@ -2,7 +2,7 @@ import React from 'react';
 import Input from './Input';
 
 
-var Form = React.createClass({
+var AddForm = React.createClass({
     // ES6 Style function declaration
     getInitialState: function() {
         return {
@@ -35,4 +35,4 @@ var Form = React.createClass({
       }
 });
 
-export default Form;
+export default AddForm;

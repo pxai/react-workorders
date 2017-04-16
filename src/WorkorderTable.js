@@ -1,5 +1,6 @@
 import React from 'react';
-import Form from './Form';
+import AddForm from './AddForm';
+import PrintForm from './PrintForm';
 import Footer from './Footer';
 
 var WorkorderTable = React.createClass({
@@ -19,7 +20,8 @@ var WorkorderTable = React.createClass({
               <h1>{this.props.title}</h1>
               <em>{this.state.situation}</em>
               <button onClick={this.updateSituation('updated')}>Update</button>
-              <Form />
+              <AddForm />
+              <PrintForm />
               <table className="table">
                   {this.props.children}
               </table>
