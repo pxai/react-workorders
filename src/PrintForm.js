@@ -29,7 +29,7 @@ var PrintForm = React.createClass({
            default:
                return(
                    <div >{/* We need always a root element */}
-                       <button className="btn btn-success" onClick={this.handleNextClick}>Print WorkOrders</button>
+                       <button className="btn btn-success" onClick={this.handleNextClick}>Start Print Wizard</button>
                    </div>);
          }
       }
