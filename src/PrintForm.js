@@ -6,16 +6,21 @@ import PrintScreen from './PrintScreen';
 var PrintForm = React.createClass({
     // ES6 Style function declaration
     getInitialState() {
-        return ({ step: 0 });
+        return ({ step: 0, printFormValues: {} });
     },
-    stepForward(event){
+    handleNextClick(event){
         event.preventDefault();
+        this.stepForward({});
+    },
+    stepForward (newFormValues) {
         var step = this.state.step + 1;
         step = (step === 3)?0:step;
-        this.setState({step: step});
+        var printFormValues = Object.assign({}, this.state.printFormValues, newFormValues)
+        this.setState({step: step, printFormValues: printFormValues });
         console.log('Field was updated: ' + this.state.step);
+        console.log(printFormValues);
     },
-  render: function () {
+    render: function () {
       switch (this.state.step) {
           case 1:
               return <DatePickForm  stepForward={this.stepForward} />;
@@ -24,7 +29,7 @@ var PrintForm = React.createClass({
            default:
                return(
                    <div >{/* We need always a root element */}
-                       <button className="btn btn-success" onClick={this.stepForward}>Print WorkOrders</button>
+                       <button className="btn btn-success" onClick={this.handleNextClick}>Print WorkOrders</button>
                    </div>);
          }
       }
