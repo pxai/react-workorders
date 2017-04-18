@@ -48,3 +48,14 @@ Tagged versions of the project
 - Forms
 - Controlled components vs Uncontrolled
 - Passing calls from father to children
+
+## v5.0
+- Mixins: reusable code
+
+## v6.0
+- React in Server side (NodeJs+Express)
+- Prerendered React content
+
+## v7.0
+- Addons: state, orderby
+- Testing with jest
