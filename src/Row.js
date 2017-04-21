@@ -1,6 +1,8 @@
 import React from 'react';
+import StringMixin from 'StringMixin';
 
 var Row = React.createClass({
+    mixins: [StringMixin],
   render: function () {
           return(<tr className="sampleClass">
               <td>{this.props.cell.id}</td>

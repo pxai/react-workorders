@@ -2,8 +2,10 @@ import React from 'react';
 import AddForm from './AddForm';
 import PrintForm from './PrintForm';
 import Footer from './Footer';
+import UsualTags from './UsualTags';
 
 var WorkorderTable = React.createClass({
+    mixins: [UsualTags],
     getInitialState: function() {
         return {
             situation: 'Data ok'
