@@ -15,10 +15,25 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(SocialTracker)*/
 import React from 'react';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as WorkorderActions from '../actions/workorder'
 import WorkorderTable from './WorkorderTable';
 import Headings from './Headings';
 import Rows from './Rows';
 import jQuery from '../public/js/jquery.min';
+
+function mapStateToProps(state) {
+    return {
+        workorders: state.workorders
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(WorkorderActions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SocialTracker)
 
 var initialData = [{
     "id" : "1",

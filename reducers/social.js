@@ -17,7 +17,7 @@ const mergeFeed = (tweets = [], reddits = [], showTweets = true, showReddits = t
   return mergedFeed;
 };
 
-export default function social(state = {
+export default function socialReducer(state = {
   tweets: [],
   reddits: [],
   feed: [],

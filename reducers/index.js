@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux'
-import social from './social'
+import { combineReducers } from 'redux';
+import workorderReducer from './workorder'
 
 const rootReducer = combineReducers({
-  social
-})
+    workorder: workorderReducer
+});
 
-export default rootReducer
+export default rootReducer;
