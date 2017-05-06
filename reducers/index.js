@@ -1,8 +1,3 @@
-import { combineReducers } from 'redux';
-import workorderReducer from './workorder'
+import { workordersReducer } from './workorder';
 
-const rootReducer = combineReducers({
-    workorder: workorderReducer
-});
-
-export default rootReducer;
+exports.workordersReducer = workordersReducer;

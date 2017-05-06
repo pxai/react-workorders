@@ -1,21 +1,28 @@
-import { createStore, applyMiddleware } from 'redux';
+var redux = require('redux');
 import thunk from 'redux-thunk';
-import reducer from '../reducers'
+import { workordersReducer } from '../reducers/workorder';
 
-const createStoreWithMiddleware = applyMiddleware(
-  thunk
-)(createStore)
 
-export default function configureStore(initialState) {
-  const store = createStoreWithMiddleware(reducer, initialState)
+export var configure = () => {
+  var reducer = redux.combineReducers({
+      workorder: workordersReducer
+  });
 
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers')
-      store.replaceReducer(nextReducer)
-    })
-  }
+    var store = redux.createStore(reducer, redux.compose (
+        redux.applyMiddleware(thunk), // With this, we can make an action to work as a function
+        window.devToolsExtension ? window.devToolsExtension() : f => f
 
-  return store
+    ));
+
+    if (module.hot) {
+        // Enable Webpack hot module replacement for reducers
+        module.hot.accept('../reducers', () => {
+            const nextReducer = require('../reducers')
+            store.replaceReducer(nextReducer)
+        })
+    }
+
+
+    return store;
 }
+
