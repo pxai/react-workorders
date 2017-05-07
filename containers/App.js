@@ -23,7 +23,9 @@ import WorkorderTable from './WorkorderTable';
 import Headings from './Headings';
 import Rows from './Rows';
 import jQuery from '../public/js/jquery.min';
-var store = require('../store/configureStore').configure();
+var actions = require('./../actions/workorder');
+var store = require('./../store/configureStore').configure();
+var reducers = require('./../reducers/index');
 
 /*
 store.subscribe(() => {
